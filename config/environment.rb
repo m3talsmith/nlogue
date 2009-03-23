@@ -10,6 +10,9 @@ Rails::Initializer.run do |config|
   config.gem "webrat"
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl",
                                         :source => "http://gems.github.com"
+  # -- Require sqlite3 if you are so inclined; less hassle sometimes -- #
+  # config.gem "sqlite3-ruby",            :version => ">= 1.2.4"
+  # -- #
   
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
