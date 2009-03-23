@@ -1,1 +1,0 @@
-%w{html pretty progress profile}.each{|n| require "cucumber/formatters/#{n}_formatter"}
