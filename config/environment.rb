@@ -2,9 +2,11 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem "rspec",       :version => ">=1.2.0"
-  config.gem "rspec-rails", :version => ">=1.2.0"
-  config.gem "cucumber",    :version => ">=0.2.0"
+  config.gem "rspec",                   :version => ">=1.2.0"
+  config.gem "rspec-rails",             :version => ">=1.2.0"
+  config.gem "cucumber",                :version => ">=0.2.0"
+  config.gem "thoughtbot-factory_girl", :lib => "factory_girl",
+                                        :source => "http://gems.github.com"
   
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
