@@ -1,5 +1,5 @@
 Given /^a engine_manager class$/ do
-  @engine_manager = Engine.new
+  @engine_manager = EngineManager.new
   @engine_manager.kind_of?(EngineManager).should be_true
 end
 
