@@ -19,6 +19,10 @@ When /^I follow "([^\"]*)"$/ do |link|
   click_link(link)
 end
 
+When /^I follow "([^\"]*)" within "([^\"]*)"$/ do |link, parent|
+  click_link_within(parent, link)
+end
+
 When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
   fill_in(field, :with => value) 
 end
@@ -40,8 +44,8 @@ end
 #   <%= f.label :alternative %><br />
 #   <%= f.datetime_select :alternative %>
 # The following steps would fill out the form:
-# When I select "November 23, 2004 11:20" as the "Preferred" data and time
-# And I select "November 25, 2004 10:30" as the "Alternative" data and time
+# When I select "November 23, 2004 11:20" as the "Preferred" date and time
+# And I select "November 25, 2004 10:30" as the "Alternative" date and time
 When /^I select "([^\"]*)" as the "([^\"]*)" date and time$/ do |datetime, datetime_label|
   select_datetime(datetime, :from => datetime_label)
 end
@@ -94,10 +98,36 @@ Then /^I should see "([^\"]*)"$/ do |text|
   response.should contain(text)
 end
 
+Then /^I should see \/([^\/]*)\/$/ do |regexp|
+  regexp = Regexp.new(regexp)
+  response.should contain(regexp)
+end
+
 Then /^I should not see "([^\"]*)"$/ do |text|
   response.should_not contain(text)
 end
 
+Then /^I should not see \/([^\/]*)\/$/ do |regexp|
+  regexp = Regexp.new(regexp)
+  response.should_not contain(regexp)
+end
+
+Then /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
+  field_labeled(field).value.should =~ /#{value}/
+end
+
+Then /^the "([^\"]*)" field should not contain "([^\"]*)"$/ do |field, value|
+  field_labeled(field).value.should_not =~ /#{value}/
+end
+    
 Then /^the "([^\"]*)" checkbox should be checked$/ do |label|
   field_labeled(label).should be_checked
+end
+
+Then /^the "([^\"]*)" checkbox should not be checked$/ do |label|
+  field_labeled(label).should_not be_checked
+end
+
+Then /^I should be on (.+)$/ do |page_name|
+  URI.parse(current_url).path.should == path_to(page_name)
 end
