@@ -1,9 +1,7 @@
 Feature: Manage Engines
-  In order to manage engines for nLogue
-  As a developer
-  I want to view all available engines
+  As a admin
+  I want to manage all available nLogue engines
   
-  Scenario: View all engines
-    Given a engine_manager class
-    When I ask for a list of all engines available and check the length
-    Then I will see a length greater than 0
+  Scenario: add an engine
+  Scenario: update an engine
+  Scenario: remove an engine
