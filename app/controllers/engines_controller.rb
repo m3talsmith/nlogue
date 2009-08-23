@@ -8,4 +8,11 @@ class EnginesController < ApplicationController
       format.js   {}
     end
   end
+  
+  def new
+    @engine = Engine.new
+  end
+  
+  def create
+  end
 end
