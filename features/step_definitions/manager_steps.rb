@@ -5,14 +5,14 @@ Given /^the following engines$/ do |table|
   end
 end
 
-When /^I visit "([^\"]*)"$/ do |arg1|
-  visit new_engine_path
-end
-
-When /^add in the following engine$/ do |table|
+When /^I create the following engine$/ do |table|
   # table is a Cucumber::Ast::Table
   table.hashes.each do |engine|
-    visit new_engine_path
+    visit engines_path
+    click_link "Create an Engine"
+    fill_in "Name", engine.name
+    fill_in "Version", engine.version
+    click_button "Create"
   end
 end
 

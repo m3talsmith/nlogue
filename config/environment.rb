@@ -2,14 +2,29 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem "rspec",                   :lib => false,
-                                        :version => ">= 1.2.0"
-  config.gem "rspec-rails",             :lib => false,
-                                        :version => ">= 1.2.0"
-  config.gem "cucumber",                :version => ">= 0.2.0"
+  github = "http://gems.github.com"
+  
+  config.gem "rspec",
+    :lib => false,
+    :version => ">= 1.2.0"
+  config.gem "rspec-rails",
+    :lib => false,
+    :version => ">= 1.2.0"
+  config.gem "cucumber",
+    :version => ">= 0.2.0"
   config.gem "webrat"
-  config.gem "thoughtbot-factory_girl", :lib => "factory_girl",
-                                        :source => "http://gems.github.com"
+  config.gem "haml",
+    :source   => github,
+    :version  => ">= 2.2.0"
+  config.gem "chriseppstein-compass",
+    :source   => github,
+    :version  => ">= 0.6.13",
+    :lib      => "compass"
+  config.gem "mbleigh-seed-fu",
+    :source   => github,
+    :version  => ">=1.0.0",
+    :lib      => "seed-fu"
+                                        
   # -- Require sqlite3 if you are so inclined; less hassle sometimes -- #
   # config.gem "sqlite3-ruby",            :version => ">= 1.2.4"
   # -- #

@@ -1,0 +1,26 @@
+!!! XML
+!!!
+%html{html_attrs}
+  %head
+    %title nLogue Administration
+  %body
+    #wrapper
+      #header
+        %ul.navigation
+          %li
+            = link_to "Engines", admin_engines_path
+      #body
+        #messages
+          = yield :messages
+        .page_wrapper
+          .page_navigation
+            %h1 Navigation
+            = yield :page_navigation
+          .page
+            .page_header
+              .page_title= yield :page_title
+              .page_actions= yield :page_actions
+            .page_body
+              = yield :page_body
+              = yield
+      #footer

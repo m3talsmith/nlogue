@@ -1,4 +1,4 @@
-class EnginesController < ApplicationController
+class Admins::EnginesController < AdminsController
   def index
     @engines = Engine.find(:all)
     
