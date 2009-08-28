@@ -5,7 +5,7 @@ Feature: Manage Engines
   Background: 
     Given the following engines
       | name                   | version |
-      | simple_athentication   | 0.1     |
+      | simple_authentication  | 0.1     |
       | simple_content         | 0.1     |
       | simple_content_tagging | 0.1     |
   
