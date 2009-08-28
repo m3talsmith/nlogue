@@ -1,0 +1,7 @@
+rspec --lib false --version ">= 1.2.0"
+rspec-rails --lib false --version ">= 1.2.0"
+cucumber --version ">= 0.2.0"
+webrat
+haml --source gems.github.com --version ">= 2.2.0"
+chriseppstein-compass --source gems.github.com --version ">= 0.6.13" --lib "compass"
+mbleigh-seed-fu --source gems.github.com --version ">=1.0.0" --lib "seed-fu"
