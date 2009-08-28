@@ -1,0 +1,24 @@
+- content_for :page_actions do
+  = render :partial => "page_actions"
+
+- content_for :page_content do
+  .grid_form
+    - form_for :engine, :url => admins_engines_path, :method => :post do |grid_form|
+      .grid_actions
+        nothing to see here .. yet
+      .grid_data
+        - unless @engines.empty?
+          %table.engines
+            %thead
+              %tr
+                %th &nbsp;
+                %th Name
+                %th Version
+            - @engines.each do |engine|
+              %tr.engine
+                %td= check_box_tag "engine_#{engine.id}", "none", false
+                %td= engine.name
+                %td= engine.version
+        - else
+          .empty_data
+            There are no users created yet.

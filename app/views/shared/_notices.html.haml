@@ -1,0 +1,4 @@
+- content_for :messages do
+  - flash.each_pair do |key, value|
+    .message{:id => key}
+      .content= value

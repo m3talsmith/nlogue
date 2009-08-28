@@ -1,0 +1,15 @@
+- form_for :engine, @engine, options_for_engine_path do |form|
+  - render_notices(:form_error_messages => form.error_messages)
+  
+  %fieldset
+    %h1 Engine Details
+    .field
+      = form.label      :name
+      = form.text_field :name
+    .field
+      = form.label      :version
+      = form.text_field :version
+    .form_actions
+      = submit_tag      "Create"
+      or
+      = link_to "Cancel", admins_engines_path
